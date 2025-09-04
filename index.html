@@ -505,7 +505,7 @@ document.querySelectorAll("#timeline div[style*='margin-bottom']").forEach(el=>{
     </p>
 
     <!-- Timeline -->
-    <section style="max-width:700px;margin:40px auto;padding:20px; background:rgba(255,255,255,0.05); border-radius:12px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:#ddd;">
+<section style="max-width:700px;margin:40px auto;padding:20px; background:rgba(255,255,255,0.05); border-radius:12px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:#ddd;">
   <h2 style="color:#06b6d4; font-weight:700; margin-bottom:20px; text-align:center;">Event Day Schedule (Shortlisted Teams Only)</h2>
 
   <p style="text-align:center; font-size:14px; color:#aaa; margin-bottom:40px;">
@@ -515,38 +515,38 @@ document.querySelectorAll("#timeline div[style*='margin-bottom']").forEach(el=>{
   <div class="timeline" style="position:relative; border-left: 3px solid #06b6d4; padding-left: 40px;">
 
     <div class="timeline-item" style="position:relative; margin-bottom: 28px;">
-      <span class="dot" style="position:absolute; left:-12px; top:6px; width:16px; height:16px; border-radius:50%; background:linear-gradient(90deg, #06b6d4, #7c3aed);"></span>
-      <p style="margin:0; font-weight:600; font-size:16px;">9:00 – 9:30 AM <span style="font-weight:400; color:#aaa;">– Registration & Seating</span></p>
+      <span class="dot"></span>
+      <p><b>9:00 – 9:30 AM</b> <span style="color:#aaa;">– Registration & Seating</span></p>
     </div>
 
     <div class="timeline-item" style="position:relative; margin-bottom: 28px;">
-      <span class="dot" style="position:absolute; left:-12px; top:6px; width:16px; height:16px; border-radius:50%; background:linear-gradient(90deg, #06b6d4, #7c3aed);"></span>
-      <p style="margin:0; font-weight:600; font-size:16px;">9:30 – 11:30 AM <span style="font-weight:400; color:#aaa;">– Session 1: Idea Ideation & Backend Evaluation</span></p>
+      <span class="dot"></span>
+      <p><b>9:30 – 11:30 AM</b> <span style="color:#aaa;">– Session 1: Idea Ideation & Backend Evaluation</span></p>
     </div>
 
     <div class="timeline-item" style="position:relative; margin-bottom: 28px;">
-      <span class="dot" style="position:absolute; left:-12px; top:6px; width:16px; height:16px; border-radius:50%; background:linear-gradient(90deg, #06b6d4, #7c3aed);"></span>
-      <p style="margin:0; font-weight:600; font-size:16px;">11:30 AM – 1:00 PM <span style="font-weight:400; color:#aaa;">– Session 2: UI & API Integration</span></p>
+      <span class="dot"></span>
+      <p><b>11:30 AM – 1:00 PM</b> <span style="color:#aaa;">– Session 2: UI & API Integration</span></p>
     </div>
 
     <div class="timeline-item" style="position:relative; margin-bottom: 28px;">
-      <span class="dot" style="position:absolute; left:-12px; top:6px; width:16px; height:16px; border-radius:50%; background:linear-gradient(90deg, #06b6d4, #7c3aed);"></span>
-      <p style="margin:0; font-weight:600; font-size:16px;">1:00 – 1:15 PM <span style="font-weight:400; color:#aaa;">– Lunch Break</span></p>
+      <span class="dot"></span>
+      <p><b>1:00 – 1:15 PM</b> <span style="color:#aaa;">– Lunch Break</span></p>
     </div>
 
     <div class="timeline-item" style="position:relative; margin-bottom: 28px;">
-      <span class="dot" style="position:absolute; left:-12px; top:6px; width:16px; height:16px; border-radius:50%; background:linear-gradient(90deg, #06b6d4, #7c3aed);"></span>
-      <p style="margin:0; font-weight:600; font-size:16px;">1:15 – 2:00 PM <span style="font-weight:400; color:#aaa;">– Tea Break</span></p>
+      <span class="dot"></span>
+      <p><b>1:15 – 2:00 PM</b> <span style="color:#aaa;">– Tea Break</span></p>
     </div>
 
     <div class="timeline-item" style="position:relative; margin-bottom: 28px;">
-      <span class="dot" style="position:absolute; left:-12px; top:6px; width:16px; height:16px; border-radius:50%; background:linear-gradient(90deg, #06b6d4, #7c3aed);"></span>
-      <p style="margin:0; font-weight:600; font-size:16px;">2:00 – 4:00 PM <span style="font-weight:400; color:#aaa;">– Session 3: Final Presentations</span></p>
+      <span class="dot"></span>
+      <p><b>2:00 – 4:00 PM</b> <span style="color:#aaa;">– Session 3: Final Presentations</span></p>
     </div>
 
     <div class="timeline-item" style="position:relative; margin-bottom: 0;">
-      <span class="dot" style="position:absolute; left:-12px; top:6px; width:16px; height:16px; border-radius:50%; background:linear-gradient(90deg, #06b6d4, #7c3aed);"></span>
-      <p style="margin:0; font-weight:600; font-size:16px;">4:00 – 5:00 PM <span style="font-weight:400; color:#aaa;">– Prize Distribution & Closing Ceremony</span></p>
+      <span class="dot"></span>
+      <p><b>4:00 – 5:00 PM</b> <span style="color:#aaa;">– Prize Distribution & Closing Ceremony</span></p>
     </div>
 
   </div>
@@ -599,22 +599,27 @@ document.querySelectorAll("#timeline div[style*='margin-bottom']").forEach(el=>{
 </style>
 
 <script>
-// Reveal animation on scroll
-const items = document.querySelectorAll(".timeline-item");
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".timeline-item");
 
-function revealOnScroll() {
-  const trigger = window.innerHeight * 0.85;
-  items.forEach(item => {
-    const rect = item.getBoundingClientRect();
-    if (rect.top < trigger) {
-      item.classList.add("show");
-    }
-  });
-}
+  function revealOnScroll() {
+    const trigger = window.innerHeight * 0.85;
+    items.forEach(item => {
+      const rect = item.getBoundingClientRect();
+      if (rect.top < trigger) {
+        item.classList.add("show");
+      }
+    });
+  }
 
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
+  window.addEventListener("scroll", revealOnScroll);
+  window.addEventListener("load", revealOnScroll);
+
+  // Also trigger it once immediately after DOM loads
+  revealOnScroll();
+});
 </script>
+
 
 </body>
 </html>
